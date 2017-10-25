@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerCharacterControl : MonoBehaviour {
     public float moveForce = 300f;
-    public float maxSpeed = 1f;
+    public float speed = 1f;
     public float jumpForce = 100f;
 
     private Rigidbody2D rb;
@@ -17,13 +17,14 @@ public class PlayerCharacterControl : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-        rb.velocity = Vector3.right * maxSpeed;
+        rb.velocity = new Vector3(1 * speed, rb.velocity.y, 0) ;//Vector3.right * speed;
 
         float v = Input.GetAxis("Vertical");
-        if (v * rb.velocity.y < maxSpeed)
-        {
-            rb.AddForce(Vector2.up *v * jumpForce);
+        if (v > 0){
+            rb.velocity = new Vector3(rb.velocity.x * speed, 1 * jumpForce, 0);
         }
+        
+        
         
 	}
 }
