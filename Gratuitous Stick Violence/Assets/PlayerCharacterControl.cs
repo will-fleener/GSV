@@ -18,8 +18,6 @@ public class PlayerCharacterControl : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
         rb.velocity = new Vector3(1 * speed, rb.velocity.y, 0) ;
-        print(rb.velocity);
-
         float v = Input.GetAxis("Vertical");
         if (v > 0){
             rb.velocity = new Vector3(rb.velocity.x, 1 * jumpForce, 0);
