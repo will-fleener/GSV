@@ -5,37 +5,22 @@ using UnityEngine.UI;
 
 public class goToOptions : MonoBehaviour {
 
-    public Canvas optionsMenu;
-    public Button optionsButton;
-    public Button startButton;
-    public Button returnToMainMenu;
+    private Button btn;
 
 	// Use this for initialization
 	void Start () {
-        optionsMenu = optionsMenu.GetComponent<Canvas> ();
-        optionsMenu.enabled = false;
-        returnToMainMenu = returnToMainMenu.GetComponent<Button>();
-        returnToMainMenu.enabled = false;
-
-        optionsButton = optionsButton.GetComponent<Button>();
-        startButton = startButton.GetComponent<Button>();
-
-       
+        btn = this.GetComponent<Button>();
+        btn.onClick.AddListener(showOptionsMenu);
+        		
 	}
-
-    public void optionsPress()
+	
+    void showOptionsMenu ()
     {
-        optionsMenu.enabled = true;
-        optionsButton.enabled = false;
-        startButton.enabled = false;
-        returnToMainMenu.enabled = true;
+
     }
 
-    public void returnToMain()
-    {
-        optionsMenu.enabled = false;
-        optionsButton.enabled = true;
-        startButton.enabled = true;
-        returnToMainMenu.enabled = false;
-    }
+	// Update is called once per frame
+	void Update () {
+		
+	}
 }
