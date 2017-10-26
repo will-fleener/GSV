@@ -7,20 +7,34 @@ public class PlayerCharacterControl : MonoBehaviour {
     public float speed = 1f;
     public float jumpForce = 100f;
 
+    private Transform groundCheck;
+    private bool _grounded;
     private Rigidbody2D rb;
+    private bool jump = false;
 
 
-	// Use this for initialization
 	void Start () {
         rb = GetComponent<Rigidbody2D>();
-	}
-	
-	// Update is called once per frame
-	void FixedUpdate () {
+        groundCheck = transform.Find("groundCheck");
+    }
+
+    private void Update()
+    {
+        _grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
+
+        if (Input.GetAxis("Vertical") > 0 && _grounded)
+        {
+            jump = true;
+        }
+    }
+
+
+    void FixedUpdate () {
         rb.velocity = new Vector3(1 * speed, rb.velocity.y, 0) ;
         float v = Input.GetAxis("Vertical");
-        if (v > 0){
+        if (jump){
             rb.velocity = new Vector3(rb.velocity.x, 1 * jumpForce, 0);
+            jump = false;
         }
         
         
