@@ -246,9 +246,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba281d23431519f43a22704b3e176d52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveForce: 300
   speed: 1
   jumpForce: 5
+  attackSpeed: 5
+  distanceOfAttack: 3
 --- !u!1 &295844328 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1163446420690638, guid: 96d099397986d4061b06fc5ebb9b8fde,
@@ -629,7 +630,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4349507437118042, guid: 96d099397986d4061b06fc5ebb9b8fde, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 4.05
+      value: -2.42
       objectReference: {fileID: 0}
     - target: {fileID: 4349507437118042, guid: 96d099397986d4061b06fc5ebb9b8fde, type: 2}
       propertyPath: m_LocalPosition.y
