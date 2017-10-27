@@ -5,22 +5,31 @@ using UnityEngine;
 public class enemy : MonoBehaviour {
 
 	public float movespeed;
+    public float distanceBeforeAttack = 1;
 
+    private Transform _player;
+    private bool attacking = false;
 
 	// Use this for initialization
-	void Start () {
-		
-	}
+	void Awake () {
+        _player = GameObject.FindGameObjectWithTag("Player").transform;
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
-		transform.Translate (-Vector2.right * movespeed * Time.deltaTime);
+        if(Vector3.Distance(transform.position, _player.position) <= distanceBeforeAttack && !attacking)
+        {
+            //TODO kick off attack animation
+            print("enemy attack animation");
+        }
+
 	}
 
-	void OnCollisionEnter2D(Collision2D col){
-
-		if (col.gameObject.tag == "Player") {
-			Destroy (col.gameObject);
-		}
-	}
+    void Die()
+    {
+        //death animation
+        print("enemy die animation");
+        Destroy(gameObject);
+    }
 }
