@@ -3,41 +3,77 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerCharacterControl : MonoBehaviour {
-    public float moveForce = 300f;
     public float speed = 1f;
     public float jumpForce = 100f;
+    public float attackSpeed = 3f;
+    public float distanceOfAttack = 2;
 
-    private Transform groundCheck;
+    private Transform _groundCheck;
     private bool _grounded;
+    private bool _notAttacking = true;
+    private bool _attack = false;
     private Rigidbody2D rb;
-    private bool jump = false;
+    private bool _jump = false;
+    private Vector2 _touchOrigin = -Vector2.one;
+    private float initialXPos;
 
 
-	void Start () {
+
+    void Start () {
         rb = GetComponent<Rigidbody2D>();
-        groundCheck = transform.Find("groundCheck");
+        _groundCheck = transform.Find("groundCheck");
     }
 
     private void Update()
     {
-        _grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
+        _grounded = Physics2D.Linecast(transform.position, _groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
+        
+        
 
-        if (Input.GetAxis("Vertical") > 0 && _grounded)
+        if (Input.GetAxis("Vertical") > 0 && _grounded && _notAttacking)
         {
-            jump = true;
+            _jump = true;
         }
+
+        if (Input.GetAxis("Horizontal") > 0 && _notAttacking){
+            _attack = true;
+            _notAttacking = false;
+           
+        }
+       
+
     }
 
 
     void FixedUpdate () {
-        rb.velocity = new Vector3(1 * speed, rb.velocity.y, 0) ;
-        float v = Input.GetAxis("Vertical");
-        if (jump){
+
+        if (_notAttacking)
+        {
+            rb.velocity = new Vector3(1 * speed, rb.velocity.y, 0);
+        }
+        else
+        {
+            rb.velocity = new Vector3(attackSpeed, rb.velocity.y, 0);
+            if (_attack)
+            {
+                StartCoroutine(Dash());
+                _attack = false;
+            }
+        }
+
+        if (_jump){
             rb.velocity = new Vector3(rb.velocity.x, 1 * jumpForce, 0);
-            jump = false;
+            _jump = false;
         }
         
         
         
 	}
+
+    public IEnumerator Dash()
+    {
+        initialXPos = rb.position.x;
+        yield return new WaitUntil(() => rb.position.x - initialXPos >= distanceOfAttack);
+        _notAttacking = true;
+    }
 }
