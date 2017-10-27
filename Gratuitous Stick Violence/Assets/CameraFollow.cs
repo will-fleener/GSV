@@ -15,6 +15,6 @@ public class CameraFollow : MonoBehaviour {
 	
 	void LateUpdate () {
         // Set the position of the camera's transform to be the same as the player's, but offset by the calculated offset distance.
-        transform.position = playerCharacter.transform.position + offset;
+        transform.position = new Vector3(playerCharacter.transform.position.x + offset.x, transform.position.y, transform.position.z) ;
     }
 }
