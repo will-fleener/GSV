@@ -1,0 +1,836 @@
+fileFormatVersion: 2
+guid: cf3d02a7e88c80045a79a90552781181
+timeCreated: 1509060161
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: edgyspritesheet_0
+    21300002: edgyspritesheet_1
+    21300004: edgyspritesheet_2
+    21300006: edgyspritesheet_3
+    21300008: edgyspritesheet_4
+    21300010: edgyspritesheet_5
+    21300012: edgyspritesheet_6
+    21300014: edgyspritesheet_7
+    21300016: edgyspritesheet_8
+    21300018: edgyspritesheet_9
+    21300020: edgyspritesheet_10
+    21300022: edgyspritesheet_11
+    21300024: edgyspritesheet_12
+    21300026: edgyspritesheet_13
+    21300028: edgyspritesheet_14
+    21300030: edgyspritesheet_15
+    21300032: edgyspritesheet_16
+    21300034: edgyspritesheet_17
+    21300036: edgyspritesheet_18
+    21300038: edgyspritesheet_19
+    21300040: edgyspritesheet_20
+    21300042: edgyspritesheet_21
+    21300044: edgyspritesheet_22
+    21300046: edgyspritesheet_23
+    21300048: edgyspritesheet_24
+    21300050: edgyspritesheet_25
+    21300052: edgyspritesheet_26
+    21300054: edgyspritesheet_27
+    21300056: edgyspritesheet_28
+    21300058: edgyspritesheet_29
+    21300060: edgyspritesheet_30
+    21300062: edgyspritesheet_31
+    21300064: edgyspritesheet_32
+    21300066: edgyspritesheet_33
+    21300068: edgyspritesheet_34
+    21300070: edgyspritesheet_35
+    21300072: edgyspritesheet_36
+    21300074: edgyspritesheet_37
+    21300076: edgyspritesheet_38
+    21300078: edgyspritesheet_39
+    21300080: edgyspritesheet_40
+    21300082: edgyspritesheet_41
+    21300084: edgyspritesheet_42
+    21300086: edgyspritesheet_43
+    21300088: edgyspritesheet_44
+    21300090: edgyspritesheet_45
+    21300092: edgyspritesheet_46
+    21300094: edgyspritesheet_47
+    21300096: edgyspritesheet_48
+    21300098: edgyspritesheet_49
+    21300100: edgyspritesheet_50
+    21300102: edgyspritesheet_51
+    21300104: edgyspritesheet_52
+    21300106: edgyspritesheet_53
+    21300108: edgyspritesheet_54
+    21300110: edgyspritesheet_55
+  externalObjects: {}
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: edgyspritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 3665
+        width: 500
+        height: 600
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: edgyspritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 3665
+        width: 500
+        height: 600
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: edgyspritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 1025
+        y: 3665
+        width: 500
+        height: 600
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: edgyspritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 1535
+        y: 3665
+        width: 500
+        height: 600
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: edgyspritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 2045
+        y: 3665
+        width: 500
+        height: 600
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: edgyspritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 2555
+        y: 3665
+        width: 500
+        height: 600
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: edgyspritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 3065
+        y: 3665
+        width: 500
+        height: 600
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: edgyspritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 3575
+        y: 3665
+        width: 500
+        height: 600
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: edgyspritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 3055
+        width: 500
+        height: 600
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: edgyspritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 3055
+        width: 500
+        height: 600
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: edgyspritesheet_10
+      rect:
+        serializedVersion: 2
+        x: 1025
+        y: 3055
+        width: 500
+        height: 600
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: edgyspritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 1535
+        y: 3055
+        width: 500
+        height: 600
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: edgyspritesheet_12
+      rect:
+        serializedVersion: 2
+        x: 2045
+        y: 3055
+        width: 500
+        height: 600
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: edgyspritesheet_13
+      rect:
+        serializedVersion: 2
+        x: 2555
+        y: 3055
+        width: 500
+        height: 600
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: edgyspritesheet_14
+      rect:
+        serializedVersion: 2
+        x: 3065
+        y: 3055
+        width: 500
+        height: 600
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: edgyspritesheet_15
+      rect:
+        serializedVersion: 2
+        x: 3575
+        y: 3055
+        width: 500
+        height: 600
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: edgyspritesheet_16
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 2445
+        width: 500
+        height: 600
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: edgyspritesheet_17
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 2445
+        width: 500
+        height: 600
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: edgyspritesheet_18
+      rect:
+        serializedVersion: 2
+        x: 1025
+        y: 2445
+        width: 500
+        height: 600
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: edgyspritesheet_19
+      rect:
+        serializedVersion: 2
+        x: 1535
+        y: 2445
+        width: 500
+        height: 600
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: edgyspritesheet_20
+      rect:
+        serializedVersion: 2
+        x: 2045
+        y: 2445
+        width: 500
+        height: 600
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: edgyspritesheet_21
+      rect:
+        serializedVersion: 2
+        x: 2555
+        y: 2445
+        width: 500
+        height: 600
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: edgyspritesheet_22
+      rect:
+        serializedVersion: 2
+        x: 3065
+        y: 2445
+        width: 500
+        height: 600
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: edgyspritesheet_23
+      rect:
+        serializedVersion: 2
+        x: 3575
+        y: 2445
+        width: 500
+        height: 600
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: edgyspritesheet_24
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 1835
+        width: 500
+        height: 600
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: edgyspritesheet_25
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 1835
+        width: 500
+        height: 600
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: edgyspritesheet_26
+      rect:
+        serializedVersion: 2
+        x: 1025
+        y: 1835
+        width: 500
+        height: 600
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: edgyspritesheet_27
+      rect:
+        serializedVersion: 2
+        x: 1535
+        y: 1835
+        width: 500
+        height: 600
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: edgyspritesheet_28
+      rect:
+        serializedVersion: 2
+        x: 2045
+        y: 1835
+        width: 500
+        height: 600
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: edgyspritesheet_29
+      rect:
+        serializedVersion: 2
+        x: 2555
+        y: 1835
+        width: 500
+        height: 600
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: edgyspritesheet_30
+      rect:
+        serializedVersion: 2
+        x: 3065
+        y: 1835
+        width: 500
+        height: 600
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: edgyspritesheet_31
+      rect:
+        serializedVersion: 2
+        x: 3575
+        y: 1835
+        width: 500
+        height: 600
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: edgyspritesheet_32
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 1225
+        width: 500
+        height: 600
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: edgyspritesheet_33
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 1225
+        width: 500
+        height: 600
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: edgyspritesheet_34
+      rect:
+        serializedVersion: 2
+        x: 1025
+        y: 1225
+        width: 500
+        height: 600
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: edgyspritesheet_35
+      rect:
+        serializedVersion: 2
+        x: 1535
+        y: 1225
+        width: 500
+        height: 600
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: edgyspritesheet_36
+      rect:
+        serializedVersion: 2
+        x: 2045
+        y: 1225
+        width: 500
+        height: 600
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: edgyspritesheet_37
+      rect:
+        serializedVersion: 2
+        x: 2555
+        y: 1225
+        width: 500
+        height: 600
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: edgyspritesheet_38
+      rect:
+        serializedVersion: 2
+        x: 3065
+        y: 1225
+        width: 500
+        height: 600
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: edgyspritesheet_39
+      rect:
+        serializedVersion: 2
+        x: 3575
+        y: 1225
+        width: 500
+        height: 600
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: edgyspritesheet_40
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 615
+        width: 500
+        height: 600
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: edgyspritesheet_41
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 615
+        width: 500
+        height: 600
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: edgyspritesheet_42
+      rect:
+        serializedVersion: 2
+        x: 1025
+        y: 615
+        width: 500
+        height: 600
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: edgyspritesheet_43
+      rect:
+        serializedVersion: 2
+        x: 1535
+        y: 615
+        width: 500
+        height: 600
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: edgyspritesheet_44
+      rect:
+        serializedVersion: 2
+        x: 2045
+        y: 615
+        width: 500
+        height: 600
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: edgyspritesheet_45
+      rect:
+        serializedVersion: 2
+        x: 2555
+        y: 615
+        width: 500
+        height: 600
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: edgyspritesheet_46
+      rect:
+        serializedVersion: 2
+        x: 3065
+        y: 615
+        width: 500
+        height: 600
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: edgyspritesheet_47
+      rect:
+        serializedVersion: 2
+        x: 3575
+        y: 615
+        width: 500
+        height: 600
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: edgyspritesheet_48
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 5
+        width: 500
+        height: 600
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
