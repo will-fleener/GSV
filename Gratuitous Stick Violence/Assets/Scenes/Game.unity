@@ -123,8 +123,8 @@ GameObject:
   - component: {fileID: 261981017}
   - component: {fileID: 261981019}
   - component: {fileID: 261981020}
-  - component: {fileID: 261981021}
   - component: {fileID: 261981016}
+  - component: {fileID: 261981021}
   m_Layer: 0
   m_Name: Player Character
   m_TagString: Player
@@ -250,6 +250,23 @@ MonoBehaviour:
   jumpForce: 5
   attackSpeed: 5
   distanceOfAttack: 3
+--- !u!95 &261981021
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 261981015}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ce8d481f470829f4c93a31672b82759a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &295844328 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1163446420690638, guid: 96d099397986d4061b06fc5ebb9b8fde,
@@ -352,7 +369,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 08e700389adfd8540a348b04701adb3f, type: 3}
-  m_Color: {r: 1, g: 0.53676474, b: 0.53676474, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -563,7 +580,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &1996794798
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -658,7 +675,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4349507437118042, guid: 96d099397986d4061b06fc5ebb9b8fde, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114915249227512530, guid: 96d099397986d4061b06fc5ebb9b8fde,
         type: 2}
