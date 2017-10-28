@@ -9,6 +9,7 @@ public class goToOptions : MonoBehaviour {
     public Button optionsButton;
     public Button startButton;
     public Button returnToMainMenu;
+    public Button muteButton;
 
 	// Use this for initialization
 	void Start () {
@@ -20,7 +21,7 @@ public class goToOptions : MonoBehaviour {
         optionsButton = optionsButton.GetComponent<Button>();
         startButton = startButton.GetComponent<Button>();
 
-       
+        muteButton = optionsMenu.GetComponent<Button>();
 	}
 
     public void optionsPress()
@@ -37,5 +38,10 @@ public class goToOptions : MonoBehaviour {
         optionsButton.enabled = true;
         startButton.enabled = true;
         returnToMainMenu.enabled = false;
+    }
+
+    public void Mute()
+    {
+        AudioListener.pause = !AudioListener.pause;
     }
 }
