@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerCharacterControl : MonoBehaviour {
     public float speed = 1f;
@@ -17,6 +18,7 @@ public class PlayerCharacterControl : MonoBehaviour {
     private Vector2 _touchOrigin = -Vector2.one;
     private float initialXPos;
     private Vector2 touchOrigin = -Vector2.one;
+    private int _score;
 
     private AudioSource jumpSound;
     private AudioSource attackSound;
@@ -32,6 +34,13 @@ public class PlayerCharacterControl : MonoBehaviour {
     private void Update()
     {
         _grounded = Physics2D.Linecast(transform.position, _groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
+        _score =(int) transform.position.x;
+
+       if(transform.position.y <= -10)
+        {
+            gameOver();
+        }
+
 
     #if UNITY_STANDALONE || UNITY_EDITOR
 
@@ -40,7 +49,6 @@ public class PlayerCharacterControl : MonoBehaviour {
             _jump = true;
             jumpSound.Play(); 
         }
-
         if (Input.GetAxis("Horizontal") > 0 && _notAttacking){
             _attack = true;
             _notAttacking = false;
@@ -109,13 +117,13 @@ public class PlayerCharacterControl : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D col)
     {
-
         if (col.gameObject.tag == "Enemy")
         {
             if (!_notAttacking)
             {
                 col.gameObject.SendMessage("Die");
-                updateScore(50);//TODO
+                _score += 50;
+                updateScore(_score);//TODO
             } else
             {
                 gameOver(); //TODO
@@ -133,12 +141,33 @@ public class PlayerCharacterControl : MonoBehaviour {
 
     public void gameOver()
     {
-        //TODO
+        print("Score: " + _score);
+        updateScore(_score);
+        setHighScore(_score);
+        SceneManager.LoadScene("Scoreboard", LoadSceneMode.Single);
         print("player die animation");
     }
 
     void updateScore(int score)
     {
+        //TODO
+    }
 
+    private void setHighScore(int score)
+    {
+        print(PlayerPrefs.HasKey("highScore"));
+        if (PlayerPrefs.HasKey("highScore"))
+        {
+            if (PlayerPrefs.GetInt("highScore") < _score)
+            {
+                print("Current Highscore " + (PlayerPrefs.GetInt("highScore")));
+                PlayerPrefs.SetInt("highScore", _score);
+                PlayerPrefs.Save();
+            }
+        } else
+        {
+            PlayerPrefs.SetInt("highScore", _score);
+            PlayerPrefs.Save();
+        }
     }
 }

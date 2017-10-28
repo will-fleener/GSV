@@ -6,13 +6,13 @@ using UnityEngine.UI;
 
 public class beginWorldGen : MonoBehaviour {
 
-    private Button btn;
+    private Button _btn;
 
     // Use this for initialization
     void Start()
     {
-        btn = this.GetComponent<Button>();
-        btn.onClick.AddListener(commenceWorldGen);
+        _btn = this.GetComponent<Button>();
+        _btn.onClick.AddListener(commenceWorldGen);
 
     }
 
