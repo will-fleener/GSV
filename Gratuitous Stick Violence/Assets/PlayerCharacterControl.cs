@@ -6,7 +6,7 @@ public class PlayerCharacterControl : MonoBehaviour {
     public float speed = 1f;
     public float jumpForce = 100f;
     public float attackSpeed = 3f;
-    public float distanceOfAttack = 2;
+    public float distanceOfAttack = 3;
 
     private Transform _groundCheck;
     private bool _grounded;
@@ -65,15 +65,41 @@ public class PlayerCharacterControl : MonoBehaviour {
             rb.velocity = new Vector3(rb.velocity.x, 1 * jumpForce, 0);
             _jump = false;
         }
-        
-        
-        
+
 	}
+
+    void OnCollisionEnter2D(Collision2D col)
+    {
+
+        if (col.gameObject.tag == "Enemy")
+        {
+            if (!_notAttacking)
+            {
+                col.gameObject.SendMessage("Die");
+                updateScore(50);//TODO
+            } else
+            {
+                gameOver(); //TODO
+            }
+        }
+    }
+
 
     public IEnumerator Dash()
     {
         initialXPos = rb.position.x;
         yield return new WaitUntil(() => rb.position.x - initialXPos >= distanceOfAttack);
         _notAttacking = true;
+    }
+
+    public void gameOver()
+    {
+        //TODO
+        print("player die animation");
+    }
+
+    void updateScore(int score)
+    {
+
     }
 }
