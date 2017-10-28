@@ -16,6 +16,7 @@ public class PlayerCharacterControl : MonoBehaviour {
     private bool _jump = false;
     private Vector2 _touchOrigin = -Vector2.one;
     private float initialXPos;
+    private Vector2 touchOrigin = -Vector2.one;
 
 
 
@@ -27,8 +28,8 @@ public class PlayerCharacterControl : MonoBehaviour {
     private void Update()
     {
         _grounded = Physics2D.Linecast(transform.position, _groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
-        
-        
+
+    #if UNITY_STANDALONE || UNITY_EDITOR
 
         if (Input.GetAxis("Vertical") > 0 && _grounded && _notAttacking)
         {
@@ -40,7 +41,39 @@ public class PlayerCharacterControl : MonoBehaviour {
             _notAttacking = false;
            
         }
-       
+
+#elif UNITY_IOS || UNITY_ANDROID || UNITY_WP8 || UNITY_IPHONE
+        
+            if (Input.touchCount > 0)
+            {
+                Touch myTouch = Input.touches[0];
+                
+                if (myTouch.phase == TouchPhase.Began)
+                {
+                    touchOrigin = myTouch.position;
+                }
+                
+                else if (myTouch.phase == TouchPhase.Ended && touchOrigin.x >= 0)
+                {
+                    Vector2 touchEnd = myTouch.position;
+                    float x = touchEnd.x - touchOrigin.x;
+                    float y = touchEnd.y - touchOrigin.y;
+                    touchOrigin.x = -1;
+
+                    if (Mathf.Abs(x) > Mathf.Abs(y) && x > 0 && _notAttacking)
+                    {
+                        _attack = true;
+                        _notAttacking = false;
+                    }
+                    else if(Mathf.Abs(x) < Mathf.Abs(y) && _grounded && _notAttacking)
+                    {
+                        _jump = true;
+                    }
+                }
+            }
+        
+#endif
+
 
     }
 
