@@ -208,8 +208,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 261981015}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -5.92, z: 0}
-  m_LocalScale: {x: 0.26400617, y: 0.7686879, z: 1}
+  m_LocalPosition: {x: 0, y: -4.32, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1056017917}
   m_Father: {fileID: 0}
@@ -248,7 +248,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 16
   jumpForce: 13
-  attackSpeed: 5
+  attackSpeed: 25
   distanceOfAttack: 3
 --- !u!95 &261981021
 Animator:
