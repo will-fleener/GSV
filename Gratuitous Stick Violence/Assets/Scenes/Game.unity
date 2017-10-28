@@ -147,9 +147,9 @@ BoxCollider2D:
   m_Offset: {x: 1.0753016, y: -1.5}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 1}
-    oldSize: {x: 2.5, y: 3}
-    newSize: {x: 5.0000005, y: 6}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 5, y: 6}
+    newSize: {x: 5, y: 6}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -191,12 +191,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 36a0fb27352e4fd4284e64f0de861cf8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5c3f242fe8233a84ca77d0cd90ba2ba9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 5.0000005, y: 6}
+  m_Size: {x: 5, y: 6}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -208,7 +208,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 261981015}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -4.02, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1056017917}
@@ -248,7 +248,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 16
   jumpForce: 13
-  attackSpeed: 5
+  attackSpeed: 25
   distanceOfAttack: 3
 --- !u!95 &261981021
 Animator:
@@ -304,19 +304,36 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.009121895, y: -0.06385374}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5, y: 5}
+    oldSize: {x: 3.0000002, y: 3.5000002}
     newSize: {x: 5, y: 5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 1
   serializedVersion: 2
-  m_Size: {x: 5, y: 5}
+  m_Size: {x: 2.6100407, y: 3.2668228}
   m_EdgeRadius: 0
+--- !u!95 &295844334
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 295844328}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 72b5d295b07348140a9995c8ff1edf42, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &910786075
 GameObject:
   m_ObjectHideFlags: 0
@@ -651,7 +668,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4349507437118042, guid: 96d099397986d4061b06fc5ebb9b8fde, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -5.54
+      value: -3.99
       objectReference: {fileID: 0}
     - target: {fileID: 4349507437118042, guid: 96d099397986d4061b06fc5ebb9b8fde, type: 2}
       propertyPath: m_LocalPosition.z
@@ -681,6 +698,33 @@ Prefab:
         type: 2}
       propertyPath: movespeed
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1163446420690638, guid: 96d099397986d4061b06fc5ebb9b8fde, type: 2}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1163446420690638, guid: 96d099397986d4061b06fc5ebb9b8fde, type: 2}
+      propertyPath: m_Name
+      value: Archibald
+      objectReference: {fileID: 0}
+    - target: {fileID: 212986263111370684, guid: 96d099397986d4061b06fc5ebb9b8fde,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ec80c888cbbab5b44a1b42e122c7c99b,
+        type: 3}
+    - target: {fileID: 4349507437118042, guid: 96d099397986d4061b06fc5ebb9b8fde, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4349507437118042, guid: 96d099397986d4061b06fc5ebb9b8fde, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114915249227512530, guid: 96d099397986d4061b06fc5ebb9b8fde,
+        type: 2}
+      propertyPath: distanceBeforeAttack
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 96d099397986d4061b06fc5ebb9b8fde, type: 2}
