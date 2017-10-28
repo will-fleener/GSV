@@ -17,11 +17,12 @@ public class PlayerCharacterControl : MonoBehaviour {
     private Vector2 _touchOrigin = -Vector2.one;
     private float initialXPos;
     private Vector2 touchOrigin = -Vector2.one;
-
+    private Animator _playerAnim;
 
 
     void Start () {
         rb = GetComponent<Rigidbody2D>();
+        _playerAnim = this.GetComponent<Animator>();
         _groundCheck = transform.Find("groundCheck");
     }
 
@@ -36,7 +37,11 @@ public class PlayerCharacterControl : MonoBehaviour {
             _jump = true;
         }
 
-        if (Input.GetAxis("Horizontal") > 0 && _notAttacking){
+        //if ((Input.GetButtonDown("Dash") || Input.GetAxis("Horizontal") > 0) && _notAttacking){
+        if ((Input.GetButtonDown("Dash")) && _notAttacking)
+            {
+                //_playerAnim.SetTrigger("attack");
+                _playerAnim.Play("player_attack");
             _attack = true;
             _notAttacking = false;
            
@@ -103,12 +108,16 @@ public class PlayerCharacterControl : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D col)
     {
-
+        
         if (col.gameObject.tag == "Enemy")
         {
+            
             if (!_notAttacking)
             {
-                col.gameObject.SendMessage("Die");
+                print("murdering");
+                //col.gameObject.SendMessage("Die");
+                enemy archibald = col.gameObject.GetComponent<enemy>();
+                archibald.Die();
                 updateScore(50);//TODO
             } else
             {
@@ -120,8 +129,9 @@ public class PlayerCharacterControl : MonoBehaviour {
 
     public IEnumerator Dash()
     {
-        initialXPos = rb.position.x;
-        yield return new WaitUntil(() => rb.position.x - initialXPos >= distanceOfAttack);
+        initialXPos = transform.position.x;
+        //yield return new WaitUntil(() => transform.position.x - initialXPos >= distanceOfAttack);
+        yield return new WaitForSeconds(1f);
         _notAttacking = true;
     }
 
