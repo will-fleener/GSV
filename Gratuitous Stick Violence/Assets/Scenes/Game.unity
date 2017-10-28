@@ -391,6 +391,7 @@ MonoBehaviour:
   jumpForce: 13
   attackSpeed: 45
   distanceOfAttack: 2
+  _score: 0
 --- !u!95 &261981021
 Animator:
   serializedVersion: 3
@@ -681,7 +682,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &884734236
 MonoBehaviour:
@@ -696,7 +697,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlatform: {fileID: 1866174557793270, guid: 2a45db6b69812de428aae71df0a2b16f,
     type: 2}
-  enemy: {fileID: 0}
   generationPoint: {fileID: 1375038374}
   distanceBetween: 0
   distanceBetweenMin: 24
@@ -718,9 +718,18 @@ GameObject:
   m_IsActive: 0
 --- !u!4 &910786076
 Transform:
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 4479290775853134, guid: 2a45db6b69812de428aae71df0a2b16f,
     type: 2}
-  m_PrefabInternal: {fileID: 870629185}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 910786075}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &919266486
 GameObject:
   m_ObjectHideFlags: 0
@@ -731,6 +740,7 @@ GameObject:
   - component: {fileID: 919266487}
   - component: {fileID: 919266489}
   - component: {fileID: 919266488}
+  - component: {fileID: 919266490}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -795,6 +805,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 919266486}
+--- !u!114 &919266490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 919266486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a4c6f1a57b797a4882bab4d6dbe9559, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 261981015}
 --- !u!1 &1056017916
 GameObject:
   m_ObjectHideFlags: 0
@@ -911,7 +933,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1457896389
 GameObject:
@@ -1340,7 +1362,7 @@ RectTransform:
   m_Children:
   - {fileID: 919266487}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
