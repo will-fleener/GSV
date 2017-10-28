@@ -13,6 +13,7 @@ public class enemy : MonoBehaviour
     private Animator _archibaldAnim;
     private Collider2D _archibaldCol;
     private Rigidbody2D _archibaldRB;
+    private AudioSource attackSound;
 
     // Use this for initialization
     void Awake()
@@ -21,6 +22,7 @@ public class enemy : MonoBehaviour
         _archibaldAnim = this.GetComponent<Animator>();
         _archibaldCol = this.GetComponent<Collider2D>();
         _archibaldRB = this.GetComponent<Rigidbody2D>();
+        attackSound = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -31,6 +33,7 @@ public class enemy : MonoBehaviour
             //TODO kick off attack animation
             print("enemy attack animation");
             _archibaldAnim.SetTrigger("Attack");
+            attackSound.Play();
         }
 
     }
