@@ -35,8 +35,13 @@ public class PlayerCharacterControl : MonoBehaviour {
     private void Update()
     {
         _grounded = Physics2D.Linecast(transform.position, _groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
+        _score = (int)transform.position.x;
 
-    #if UNITY_STANDALONE || UNITY_EDITOR
+        if (transform.position.y <= -10)
+        {
+            gameOver();
+        }
+#if UNITY_STANDALONE || UNITY_EDITOR
 
         if (Input.GetAxis("Vertical") > 0 && _grounded && _notAttacking)
         {
