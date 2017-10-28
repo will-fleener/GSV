@@ -25,6 +25,7 @@ public class PlayerCharacterControl : MonoBehaviour {
     private AudioSource attackSound;
 
     void Start () {
+		//Steve the testing comment
         rb = GetComponent<Rigidbody2D>();
         _playerAnim = this.GetComponent<Animator>();
         _groundCheck = transform.Find("groundCheck");
