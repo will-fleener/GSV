@@ -18,11 +18,15 @@ public class PlayerCharacterControl : MonoBehaviour {
     private float initialXPos;
     private Vector2 touchOrigin = -Vector2.one;
 
-
+    private AudioSource jumpSound;
+    private AudioSource attackSound;
 
     void Start () {
         rb = GetComponent<Rigidbody2D>();
         _groundCheck = transform.Find("groundCheck");
+        jumpSound = GetComponent<AudioSource>();
+        attackSound = GetComponent<AudioSource>();
+        
     }
 
     private void Update()
@@ -34,11 +38,13 @@ public class PlayerCharacterControl : MonoBehaviour {
         if (Input.GetAxis("Vertical") > 0 && _grounded && _notAttacking)
         {
             _jump = true;
+            jumpSound.Play(); 
         }
 
         if (Input.GetAxis("Horizontal") > 0 && _notAttacking){
             _attack = true;
             _notAttacking = false;
+            attackSound.Play();
            
         }
 
