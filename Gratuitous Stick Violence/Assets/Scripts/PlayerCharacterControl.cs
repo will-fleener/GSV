@@ -18,7 +18,7 @@ public class PlayerCharacterControl : MonoBehaviour {
     private Vector2 _touchOrigin = -Vector2.one;
     private float initialXPos;
     private Vector2 touchOrigin = -Vector2.one;
-	private int _score;
+	public int _score;
     private Animator _playerAnim;
 
 	private AudioSource jumpSound;
@@ -132,10 +132,10 @@ public class PlayerCharacterControl : MonoBehaviour {
                 enemy archibald = col.gameObject.GetComponent<enemy>();
                 archibald.Die();
                 _score += 50;
-                updateScore(_score);//TODO
+                updateScore(_score);
             } else
             {
-                gameOver(); //TODO
+                gameOver();
             }
         }
     }
