@@ -18,29 +18,23 @@ public class PlayerCharacterControl : MonoBehaviour {
     private Vector2 _touchOrigin = -Vector2.one;
     private float initialXPos;
     private Vector2 touchOrigin = -Vector2.one;
-    private int _score;
+	private int _score;
+    private Animator _playerAnim;
 
-    private AudioSource jumpSound;
+	private AudioSource jumpSound;
     private AudioSource attackSound;
 
     void Start () {
         rb = GetComponent<Rigidbody2D>();
+        _playerAnim = this.GetComponent<Animator>();
         _groundCheck = transform.Find("groundCheck");
         jumpSound = GetComponent<AudioSource>();
         attackSound = GetComponent<AudioSource>();
-        
     }
 
     private void Update()
     {
         _grounded = Physics2D.Linecast(transform.position, _groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
-        _score =(int) transform.position.x;
-
-       if(transform.position.y <= -10)
-        {
-            gameOver();
-        }
-
 
     #if UNITY_STANDALONE || UNITY_EDITOR
 
@@ -49,7 +43,12 @@ public class PlayerCharacterControl : MonoBehaviour {
             _jump = true;
             jumpSound.Play(); 
         }
-        if (Input.GetAxis("Horizontal") > 0 && _notAttacking){
+
+        //if ((Input.GetButtonDown("Dash") || Input.GetAxis("Horizontal") > 0) && _notAttacking){
+        if ((Input.GetButtonDown("Dash")) && _notAttacking)
+            {
+                //_playerAnim.SetTrigger("attack");
+                _playerAnim.Play("player_attack");
             _attack = true;
             _notAttacking = false;
             attackSound.Play();
@@ -117,11 +116,16 @@ public class PlayerCharacterControl : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D col)
     {
+        
         if (col.gameObject.tag == "Enemy")
         {
+            
             if (!_notAttacking)
             {
-                col.gameObject.SendMessage("Die");
+                print("murdering");
+                //col.gameObject.SendMessage("Die");
+                enemy archibald = col.gameObject.GetComponent<enemy>();
+                archibald.Die();
                 _score += 50;
                 updateScore(_score);//TODO
             } else
@@ -134,8 +138,9 @@ public class PlayerCharacterControl : MonoBehaviour {
 
     public IEnumerator Dash()
     {
-        initialXPos = rb.position.x;
-        yield return new WaitUntil(() => rb.position.x - initialXPos >= distanceOfAttack);
+        initialXPos = transform.position.x;
+        //yield return new WaitUntil(() => transform.position.x - initialXPos >= distanceOfAttack);
+        yield return new WaitForSeconds(1f);
         _notAttacking = true;
     }
 
@@ -150,10 +155,10 @@ public class PlayerCharacterControl : MonoBehaviour {
 
     void updateScore(int score)
     {
-        //TODO
-    }
 
-    private void setHighScore(int score)
+    }
+	
+	private void setHighScore(int score)
     {
         print(PlayerPrefs.HasKey("highScore"));
         if (PlayerPrefs.HasKey("highScore"))
