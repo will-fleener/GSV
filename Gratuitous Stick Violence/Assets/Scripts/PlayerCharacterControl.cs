@@ -8,6 +8,7 @@ public class PlayerCharacterControl : MonoBehaviour {
     public float jumpForce = 100f;
     public float attackSpeed = 3f;
     public float distanceOfAttack = 3;
+    public float dashTime = .8f;
 
     private Transform _groundCheck;
     private bool _grounded;
@@ -82,11 +83,13 @@ public class PlayerCharacterControl : MonoBehaviour {
                     if (Mathf.Abs(x) > Mathf.Abs(y) && x > 0 && _notAttacking)
                     {
                         _attack = true;
+                        _playerAnim.Play("player_attack");
                         _notAttacking = false;
                     }
                     else if(Mathf.Abs(x) < Mathf.Abs(y) && _grounded && _notAttacking)
                     {
                         _jump = true;
+                        jumpSound.Play(); 
                     }
                 }
             }
@@ -146,7 +149,7 @@ public class PlayerCharacterControl : MonoBehaviour {
     {
         initialXPos = transform.position.x;
         //yield return new WaitUntil(() => transform.position.x - initialXPos >= distanceOfAttack);
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(dashTime);
         _notAttacking = true;
     }
 
