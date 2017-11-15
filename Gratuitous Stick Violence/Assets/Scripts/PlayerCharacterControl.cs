@@ -62,7 +62,8 @@ public class PlayerCharacterControl : MonoBehaviour {
         }
 
 #elif UNITY_IOS || UNITY_ANDROID || UNITY_WP8 || UNITY_IPHONE
-        
+    
+
             if (Input.touchCount > 0)
             {
                 Touch myTouch = Input.touches[0];
@@ -84,11 +85,16 @@ public class PlayerCharacterControl : MonoBehaviour {
                         _attack = true;
                         _notAttacking = false;
                     }
-                    else if(Mathf.Abs(x) < Mathf.Abs(y) && _grounded && _notAttacking)
+        //Swipe up detection to jump
+                    //else if(Mathf.Abs(x) < Mathf.Abs(y) && _grounded && _notAttacking)
+                    //{
+                    //    _jump = true;
+                    //}
+                    else if (Mathf.Abs(x) == 0 && Mathf.Abs(y) == 0 && _grounded && _notAttacking)
                     {
                         _jump = true;
                     }
-                }
+                } 
             }
         
 #endif
