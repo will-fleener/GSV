@@ -371,7 +371,7 @@ Rigidbody2D:
   m_Mass: 50
   m_LinearDrag: 0.5
   m_AngularDrag: 0.05
-  m_GravityScale: 1.5
+  m_GravityScale: 5
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -389,9 +389,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 16
-  jumpForce: 18
+  jumpForce: 30
   attackSpeed: 45
   distanceOfAttack: 2
+  upAttackSpeed: 30
   _score: 0
 --- !u!95 &261981021
 Animator:
