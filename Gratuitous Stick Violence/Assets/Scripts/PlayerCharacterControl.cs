@@ -9,6 +9,7 @@ public class PlayerCharacterControl : MonoBehaviour
     public float jumpForce = 100f;
     public float attackSpeed = 3f;
     public float distanceOfAttack = 3;
+    public float upAttackSpeed = 3f;
 
     private Transform _groundCheck;
     private bool _grounded;
@@ -16,6 +17,7 @@ public class PlayerCharacterControl : MonoBehaviour
     private bool _attack = false;
     private Rigidbody2D rb;
     private bool _jump = false;
+    private bool _upAttack = false;
     private float initialXPos;
     private Vector2 touchOrigin = -Vector2.one;
     public int _score;
@@ -63,6 +65,16 @@ public class PlayerCharacterControl : MonoBehaviour
             attackSound.Play();
 
         }
+        if ((Input.GetButtonDown("UpAttack")) && _notAttacking && _grounded)
+        {
+            //_playerAnim.SetTrigger("attack");
+            _playerAnim.Play("player_fast_attack");
+            _upAttack = true;
+            _notAttacking = false;
+            attackSound.Play();
+
+        }
+
 
 #elif UNITY_IOS || UNITY_ANDROID || UNITY_WP8 || UNITY_IPHONE
     
@@ -88,14 +100,15 @@ public class PlayerCharacterControl : MonoBehaviour
                         _attack = true;
                         _notAttacking = false;
                     }
-        //Swipe up detection to jump
-                    //else if(Mathf.Abs(x) < Mathf.Abs(y) && _grounded && _notAttacking)
-                    //{
-                    //    _jump = true;
-                    //}
+                //Swipe up detection for up attacks
+                    else if (Mathf.Abs(x) < Mathf.Abs(y) && _grounded && _notAttacking)
+                    {
+                        _upAttack = true;
+                        _notAttacking = false;
+                    }
                     else if (Mathf.Abs(x) == 0 && Mathf.Abs(y) == 0 && _grounded && _notAttacking)
                     {
-                        _jump = true;
+                            _jump = true;
                     }
                 } 
             }
@@ -115,11 +128,18 @@ public class PlayerCharacterControl : MonoBehaviour
         }
         else
         {
-            rb.velocity = new Vector3(attackSpeed, rb.velocity.y, 0);
+            
             if (_attack)
             {
+                rb.velocity = new Vector3(attackSpeed, rb.velocity.y, 0);
                 StartCoroutine(Dash());
                 _attack = false;
+            }
+            if (_upAttack)
+            {
+                rb.velocity = new Vector3(upAttackSpeed, 1 * upAttackSpeed, 0);
+                StartCoroutine(Dash());
+                _upAttack = false;
             }
         }
 
@@ -128,6 +148,7 @@ public class PlayerCharacterControl : MonoBehaviour
             rb.velocity = new Vector3(rb.velocity.x, 1 * jumpForce, 0);
             _jump = false;
         }
+
 
     }
 
@@ -139,7 +160,7 @@ public class PlayerCharacterControl : MonoBehaviour
 
             if (!_notAttacking)
             {
-                print("murdering");
+                //print("murdering");
                 //col.gameObject.SendMessage("Die");
                 enemy archibald = col.gameObject.GetComponent<enemy>();
                 archibald.Die();
@@ -158,7 +179,9 @@ public class PlayerCharacterControl : MonoBehaviour
     {
         initialXPos = transform.position.x;
         //yield return new WaitUntil(() => transform.position.x - initialXPos >= distanceOfAttack);
+        print("pre");
         yield return new WaitForSeconds(1f);
+        print("post");
         _notAttacking = true;
     }
 
