@@ -43,13 +43,17 @@ public class enemy : MonoBehaviour
         //death animation
         print("enemy die animation");
         //Physics2D.IgnoreCollision(_archibaldCol, _player.GetComponent<Collider2D>());
+        float startTime = Time.time;
         _archibaldCol.enabled = false;
         _archibaldRB.isKinematic = true; ;
         _archibaldRB.velocity = Vector2.zero;
+        float endTime = Time.time;
+        float totesTime = endTime - startTime;
+        print("It took this long: " + totesTime);
 
         //_archibaldAnim.SetTrigger("Get Shanked");
         _archibaldAnim.Play("archibald_ded");
-        StartCoroutine(DoubleDie());
+        //StartCoroutine(DoubleDie());
     }
 
     private IEnumerator DoubleDie()

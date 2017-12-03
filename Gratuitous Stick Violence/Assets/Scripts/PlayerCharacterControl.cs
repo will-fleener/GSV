@@ -166,6 +166,7 @@ public class PlayerCharacterControl : MonoBehaviour
                 archibald.Die();
                 _score += 50;
                 updateScore(_score);
+                rb.velocity = new Vector3(attackSpeed, rb.velocity.y, 0);
             }
             else
             {
@@ -180,7 +181,7 @@ public class PlayerCharacterControl : MonoBehaviour
         initialXPos = transform.position.x;
         //yield return new WaitUntil(() => transform.position.x - initialXPos >= distanceOfAttack);
         print("pre");
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(.58f);
         print("post");
         _notAttacking = true;
     }
