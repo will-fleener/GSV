@@ -16,9 +16,10 @@ public class OffsetScroller : MonoBehaviour {
 
     void Update()
     {
-        float y = Time.time * scrollSpeed;//Mathf.Repeat(Time.time * scrollSpeed, 1);
-        Vector2 offset = new Vector2(savedOffset.x, y);
-        rend.sharedMaterial.mainTextureOffset = offset;//SetTextureOffset("_MainTex", offset);
+
+        float x = Mathf.Repeat(Time.time * scrollSpeed, 1);
+        Vector2 offset = new Vector2(x, savedOffset.y);
+        rend.sharedMaterial.mainTextureOffset = offset;
     }
 
     void OnDisable()
