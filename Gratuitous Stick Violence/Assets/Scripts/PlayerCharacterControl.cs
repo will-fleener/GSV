@@ -94,15 +94,20 @@ public class PlayerCharacterControl : MonoBehaviour
                     float x = touchEnd.x - touchOrigin.x;
                     float y = touchEnd.y - touchOrigin.y;
                     touchOrigin.x = -1;
-
+                  
+                    //swipe right
                     if (Mathf.Abs(x) > Mathf.Abs(y) && x > 0 && _notAttacking)
                     {
+                        _playerAnim.Play("player_attack");
+                        attackSound.Play();
                         _attack = true;
                         _notAttacking = false;
                     }
                 //Swipe up detection for up attacks
                     else if (Mathf.Abs(x) < Mathf.Abs(y) && _grounded && _notAttacking)
                     {
+                        _playerAnim.Play("player_attack");
+                        attackSound.Play();
                         _upAttack = true;
                         _notAttacking = false;
                     }
