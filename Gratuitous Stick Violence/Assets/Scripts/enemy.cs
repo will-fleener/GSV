@@ -5,7 +5,6 @@ using UnityEngine;
 public class enemy : MonoBehaviour
 {
 
-    public float movespeed;
     public float distanceBeforeAttack = 8;
 
     private Transform _player;
@@ -28,6 +27,7 @@ public class enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+		
         if (Vector3.Distance(transform.position, _player.position) <= distanceBeforeAttack && !attacking)
         {
             //TODO kick off attack animation
