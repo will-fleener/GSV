@@ -646,8 +646,9 @@ MonoBehaviour:
   destPoint: {fileID: 238482387}
   generationPoint: {fileID: 1680941686}
   distanceBetween: 0
-  distanceBetweenMin: 24
-  distanceBetweenMax: 50
+  distanceBetweenMin: 100
+  distanceBetweenMax: 200
+  platformWidth: 0
 --- !u!4 &263133971
 Transform:
   m_ObjectHideFlags: 0
@@ -659,7 +660,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &552852316
 GameObject:
@@ -769,11 +770,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4479290775853134, guid: 2a45db6b69812de428aae71df0a2b16f, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 5.3
+      value: 7.6
       objectReference: {fileID: 0}
     - target: {fileID: 4479290775853134, guid: 2a45db6b69812de428aae71df0a2b16f, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -8.6
+      value: -9.1
       objectReference: {fileID: 0}
     - target: {fileID: 4479290775853134, guid: 2a45db6b69812de428aae71df0a2b16f, type: 2}
       propertyPath: m_LocalPosition.z
@@ -824,7 +825,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 794583856}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.01, y: 10.22, z: 0.032880843}
+  m_LocalPosition: {x: 5.2, y: 6.5, z: 0.032880843}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 884734235}
@@ -853,12 +854,12 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 884734234}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -9, z: -0.33485392}
+  m_LocalPosition: {x: 1.6, y: -6.6, z: -0.33485392}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 794583857}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &884734236
 MonoBehaviour:
@@ -875,10 +876,16 @@ MonoBehaviour:
     type: 2}
   generationPoint: {fileID: 1375038374}
   distanceBetween: 0
-  distanceBetweenMin: 24
-  distanceBetweenMax: 42
+  distanceBetweenMin: 50
+  distanceBetweenMax: 52
   maxHeightPoint: {fileID: 794583857}
-  maxHeightChange: 4
+  maxHeightChange: 2
+  thePlatforms:
+  - {fileID: 1866174557793270, guid: 2a45db6b69812de428aae71df0a2b16f, type: 2}
+  - {fileID: 1490908999374640, guid: cd9aec69dbcfa714185f7bbde37bf1b8, type: 2}
+  - {fileID: 1021796123580208, guid: dbf03a66c4d9a294da573c46890926bf, type: 2}
+  - {fileID: 1498208437475742, guid: ece84c4df19cb7545a4643b62ccf915d, type: 2}
+  - {fileID: 1757042308810838, guid: fc3496f19dbe25e45b41c816918f0170, type: 2}
 --- !u!1 &910786075
 GameObject:
   m_ObjectHideFlags: 0
@@ -1018,7 +1025,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1056017916}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.02, y: -3.04, z: 0}
+  m_LocalPosition: {x: 1.02, y: -5.1, z: 0}
   m_LocalScale: {x: 3.78779, y: 1.3009181, z: 1}
   m_Children: []
   m_Father: {fileID: 261981018}
