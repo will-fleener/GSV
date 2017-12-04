@@ -107,7 +107,7 @@ public class PlayerCharacterControl : MonoBehaviour
                         _notAttacking = false;
                     }
                 //Swipe up detection for up attacks
-                    else if (Mathf.Abs(x) < Mathf.Abs(y) && _grounded && _notAttacking)
+                    else if (Mathf.Abs(x) < Mathf.Abs(y) && !_upAttackLaunched)
                     {
                         _playerAnim.Play("player_fast_attack");
                         _upAttack = true;
