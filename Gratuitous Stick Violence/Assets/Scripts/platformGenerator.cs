@@ -18,8 +18,6 @@ public class platformGenerator : MonoBehaviour {
 	public float maxHeightChange;
 	private float heightChange;
 	
-	public GameObject[] thePlatforms;
-	private int selectedPlatform;
  
 
 	// Use this for initialization
@@ -41,11 +39,8 @@ public class platformGenerator : MonoBehaviour {
 			}else if(heightChange < minHeight){
 				heightChange = minHeight;
 			}
-			
-			selectedPlatform = Random.Range(0, thePlatforms.Length);
-		
 			transform.position = new Vector3(transform.position.x + platformWidth + distanceBetween, heightChange, transform.position.z);
-            Instantiate(thePlatforms[selectedPlatform], transform.position, transform.rotation);
+            Instantiate(thePlatform, transform.position, transform.rotation);
         }
 	}
 }
