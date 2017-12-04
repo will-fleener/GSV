@@ -110,14 +110,16 @@ public class PlayerCharacterControl : MonoBehaviour
                 //Swipe up detection for up attacks
                     else if (Mathf.Abs(x) < Mathf.Abs(y) && _grounded && _notAttacking)
                     {
-                        _playerAnim.Play("player_attack");
-                        attackSound.Play();
+                        _playerAnim.Play("player_fast_attack");
                         _upAttack = true;
+                        _upAttackLaunched = true;
                         _notAttacking = false;
+                        attackSound.Play();
                     }
                     else if (Mathf.Abs(x) == 0 && Mathf.Abs(y) == 0 && _grounded && _notAttacking)
                     {
                             _jump = true;
+                            jumpSound.Play();
                     }
                 } 
             }
