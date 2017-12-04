@@ -19,7 +19,6 @@ public class PlayerCharacterControl : MonoBehaviour
     private bool _jump = false;
     private bool _upAttack = false;
     private bool _upAttackLaunched = false;
-    private bool _dashing = false;
     private float initialXPos;
     private Vector2 touchOrigin = -Vector2.one;
     public int _score;
@@ -51,7 +50,7 @@ public class PlayerCharacterControl : MonoBehaviour
         }
 #if UNITY_STANDALONE || UNITY_EDITOR
 
-        if (Input.GetAxis("Vertical") > 0 && _grounded && _notAttacking)
+        if (Input.GetAxis("Vertical") > 0 && _grounded)
         {
             _jump = true;
             jumpSound.Play();
@@ -116,7 +115,7 @@ public class PlayerCharacterControl : MonoBehaviour
                         _notAttacking = false;
                         attackSound.Play();
                     }
-                    else if (Mathf.Abs(x) == 0 && Mathf.Abs(y) == 0 && _grounded && _notAttacking)
+                    else if (Mathf.Abs(x) == 0 && Mathf.Abs(y) == 0 && _grounded)
                     {
                             _jump = true;
                             jumpSound.Play();
@@ -180,7 +179,6 @@ public class PlayerCharacterControl : MonoBehaviour
                 enemy archibald = col.gameObject.GetComponent<enemy>();
                 archibald.Die();
                 _score += 50;
-                updateScore(_score);
                 rb.velocity = new Vector3(attackSpeed, rb.velocity.y, 0);
             }
             else
@@ -193,28 +191,21 @@ public class PlayerCharacterControl : MonoBehaviour
 
     public IEnumerator Dash()
     {
-        _dashing = true;
         initialXPos = transform.position.x;
         //yield return new WaitUntil(() => transform.position.x - initialXPos >= distanceOfAttack);
         print("pre");
         yield return new WaitForSeconds(.58f);
         print("post");
         _notAttacking = true;
-        _dashing = false;
     }
 
     public void gameOver()
     {
         print("Score: " + _score);
-        updateScore(_score);
         setHighScore(_score);
+        setLastScore(_score);
         SceneManager.LoadScene("Scoreboard", LoadSceneMode.Single);
         print("player die animation");
-    }
-
-    void updateScore(int score)
-    {
-
     }
 
     private void setHighScore(int score)
@@ -234,5 +225,11 @@ public class PlayerCharacterControl : MonoBehaviour
             PlayerPrefs.SetInt("highScore", _score);
             PlayerPrefs.Save();
         }
+    }
+
+    private void setLastScore(int score)
+    {
+        PlayerPrefs.SetInt("lastScore", _score);
+        PlayerPrefs.Save();   
     }
 }
